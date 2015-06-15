@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;IE=8;" />
+<link rel="Bookmark" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<title>百度指数</title>
+<meta name="keywords" content="百度指数,大数据,数据分享平台,搜索趋势" />
+<meta name="description" content="百度指数是以百度海量网民行为数据为基础的数据分享平台。在这里，你可以研究关键词搜索趋势、洞察网民兴趣和需求、监测舆情动向、定位受众特征。" />
+
+<script type="text/javascript">
+window.pageStatus = false;
+var PPval = {
+    adjust: 1433838794000 - new Date(),
+    dataStm: 1433692800000,
+    modCtrl: '',
+    hostUrl: function (u) {return u.split('/').slice(0,3).join('/');}(location.href),
+    baseUrl: '/',
+    routeUrl: '/',
+    staticUrl: '/static/',
+    imgsUrl: '/static/imgs/',
+    dataface: '/Interface/',
+    isSnap: 1
+};
+</script>
+
+                        
+    
+        <link type="text/css" rel="stylesheet" href="/static/css/styles.css?140704" />
+
+
+
+
+
+</head>
+<body style="background-color:#ebebeb;">
+
+
+
+
+
+
+
+    
+
+
+<div class="mw1300" style="_position:relative;_z-index:1;">
+<div id="userbar">
+<ul class="usernav">
+            <li class="navli userName" style="position:relative;" onmouseover="T('#uNavuMenu').show()" onmouseout="T('#uNavuMenu').hide()">
+            <i class="icons membnot" style="width:18px;height:18px;"></i>
+            <span id="ubarUname">ganggegedahub</span>
+            <i class="icons arroDown"></i>
+            <div id="uNavuMenu" class="userMenu">
+                <a class="umenu" href="/Attention/?tpl=att&word=%CC%EC%C6%F8">我的指数</a>
+                                                                <a class="umenu" target="_blank" href="/VIP/buy/?word=%CC%EC%C6%F8">创建新词</a>
+                <a class="umenu" href="/Attention/?tpl=orders&word=%CC%EC%C6%F8">购买记录</a>
+                                    <a id="ubarLogout" class="umenu sep" href="https://passport.baidu.com/?logout">退出</a>
+                            </div>
+        </li>
+        <li class="navli"><a class="umenu" href="/Attention/?tpl=att&word=%CC%EC%C6%F8">我的指数</a></li>
+        <li class="navli split">|</li>
+        <li class="navli"><a class="umenu" target="_blank" href="/VIP/buy/?word=%CC%EC%C6%F8">创建新词</a></li>
+        <li class="navli split">|</li>
+	<li class="navli"><a target="_blank" href="/Helper/?tpl=topic&word=%CC%EC%C6%F8">数说专题</a><span style="color:red;">new</span></li>
+        <li class="navli split">|</li>
+	<li class="navli"><a target="_blank" href="/Helper/?tpl=help&word=%CC%EC%C6%F8">帮助</a></li>
+        <li class="navli split">|</li>
+        <li class="navli">
+        <span>关注我们</span>
+        <a class="icons tieba" target="_blank" href="http://tieba.baidu.com/f?kw=%B0%D9%B6%C8%D6%B8%CA%FD"></a>
+        <a class="icons weibo" target="_blank" href="http://weibo.com/indexprobaidu"></a>
+    </li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <div style="padding:20px 0 13px 0;background-color:#fff;*padding-bottom:11px;">
+        <div id="headsch" class="mw1300" style="position:relative;">
+            <div class="logo"><a href="/"><img src="/static/imgs/logo.gif" width="135" height="45" alt="百度指数" /></a></div>
+            <div class="sch_nav_fm">
+
+<ul id="schnav" class="schnav ftz" onclick="BID.schnav_click()">
+    <li class="navli"><a target="_blank" name="news" href="http://news.baidu.com/">新&nbsp;闻</a></li>
+    <li class="navli"><a target="_blank" name="baidu" href="http://www.baidu.com/">网&nbsp;页</a></li>
+    <li class="navli"><a target="_blank" name="tieba" href="http://tieba.baidu.com/">贴&nbsp;吧</a></li>
+    <li class="navli"><a target="_blank" name="zhidao" href="http://zhidao.baidu.com/">知&nbsp;道</a></li>
+    <li class="navli"><a target="_blank" name="baike" href="http://baike.baidu.com/">百&nbsp;科</a></li>
+    <li class="navli"><a target="_blank" name="wenku" href="http://wenku.baidu.com/">文&nbsp;库</a></li>
+    <li class="navli"><a target="_blank" href="http://top.baidu.com/">风云榜</a></li>
+    <li class="navli"><b>指&nbsp;数</b></li>
+</ul>
+
+
+    
+<form id="schfm" method="get" action="/">
+    <input name="tpl" type="hidden" value="trend" />
+    <div class="schbox" style="width:600px;">
+        <div class="ftl">
+            <input id="schword" class="ipt hold_efkt" style="_margin-top:-2px;" name="word" maxlength="50" autocomplete="off" hold_txt="请输入您想查询的关键字" value="天气" />
+        </div>
+        <input id="schsubmit" class="btn ftl" type="submit" value="百度一下" onmouseout="this.className='btn ftl';" onmousedown="this.className='btn ftl btn_h';" onclick="if(!document.getElementById('schword').value){this.className = 'btn ftl'; return false;}" />
+        <div class="exlink ftl">
+        </div>
+        <div class="ftc"></div>
+    </div>
+</form>
+
+
+
+
+<form id="adv_schfm" class="dsn" method="get" action="/" autocomplete="off">
+    <input name="tpl" value="trend" />
+    <input name="type" value="0" />
+    <input name="area" value="0" />
+    <input name="time" value="13" />
+    <input name="word" value="天气" />
+</form>
+
+</div>
+
+
+            <div id="banner_header" style="position:absolute;right:0;top:0px;"></div>
+            <div class="ftc"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+<div class="mNavBar">
+<div class="mw1300">
+    <h2 class="navLogo">大数据分享和探索平台</h2>
+    <a class="navItem curr" href="/?tpl=trend&word=%CC%EC%C6%F8">
+        <i class="icons theIndex"></i><span>指数探索</span>
+    </a>
+    <a class="navItem" href="/Helper/?tpl=topic&word=%CC%EC%C6%F8">
+        <i class="icons industry"></i><span>数说专题</span>
+    </a>
+
+    <a class="navItem" href="/Attention/?tpl=att&word=%CC%EC%C6%F8">
+        <i class="icons myIndex"></i><span>我的指数</span>
+    </a>
+</div>
+</div>
+
+
+<!--[if lt IE 7 ]>
+    <div style="position:absolute;left:0;top:90px;width:100%;height:40px;line-height:38px;background:#4284e2;">
+        <p style="text-align:center;font-size:18px;color:#fff;">亲爱的用户，请您
+        <a target="_blank" href="http://www.baidu.com/s?wd=%E7%99%BE%E5%BA%A6%E6%B5%8F%E8%A7%88%E5%99%A8" style="color:#3f9;font-weight:bold;">升级浏览器</a>
+        以获得正常的使用效果
+        <a href="javascript:;" style="margin-left:20px;font-size:14px;color:#eca;" onclick="this.parentNode.parentNode.style.display='none'">暂时忽略</a></p>
+    </div>
+<![endif]-->
+
+
+
+
+<div class="mw1300">
+    <div id="mainWrap">
+        <div class="mainSplit" style="min-height:700px;">
+            
+
+    <div class="subNavBar">
+    <table id="subNav">
+        <tr>
+            <td><a class="snava curr" href="/?tpl=trend&word=%CC%EC%C6%F8"><span class="holdW">趋势研究</span></a></td>
+            <td><a class="snava" href="/?tpl=demand&word=%CC%EC%C6%F8"><span class="holdW">需求图谱</span></a></td>
+            <td><a class="snava" href="/?tpl=sentiment&word=%CC%EC%C6%F8"><span class="holdW">舆情管家</span></a></td>
+            <td><a class="snava" href="/?tpl=crowd&word=%CC%EC%C6%F8"><span class="holdW">人群画像</span></a></td>
+        </tr>
+    </table>
+</div>
+
+
+    
+<div class="blkUnit grpUnit" id="trendProfile">
+    <div class="titlBar" style="padding-bottom:15px;">
+        <h4>指数概况</h4>
+        <i class="icons help" onclick="BID.showHelpTip('hptp_tProfile')"></i>
+    </div>
+    <div class="tabUnit">
+        <div class="tabTitle" style="padding-top:1px;background-color:#f6f6f6;">
+            <div class="stmTabs tabUl" onclick="BID.tabFun()"></div>
+        </div>
+        <div class="tabConts"></div>
+<script class="baiduTpl" type="text/html">
+<%if(!items || !items.length){ %><%:=BID.sTips['noDataP']%><%return;}%>
+<table class="mtable <%=tbClass%>">
+    <tr>
+        <th>&nbsp;</th>
+        <th><div class="lrRadius"><div class="lrRl"></div><div class="lrRc">
+            整体搜索指数<span class="tsp">|</span>移动搜索指数
+        </div><div class="lrRr"></div></div></th>
+        <th><div class="lrRadius"><div class="lrRl"></div><div class="lrRc">
+            整体同比<span class="tsp">|</span>整体环比
+        </div><div class="lrRr"></div></div></th>
+        <th><div class="lrRadius"><div class="lrRl"></div><div class="lrRc">
+            移动同比<span class="tsp">|</span>移动环比
+        </div><div class="lrRr"></div></div></th>
+    </tr>
+<%
+for(var i = 0, iLen = items.length; i < iLen; i++){
+    var item = items[i];
+%>
+    <tr>
+        <td class="tpWord"><div class="toe" style="color:<%=BID.getColor(i)%>;" title="<%=item.word%>"><%=item.word%></div></td>
+        <td><div class="lrRadius">
+            <span class="ftlwhf enc2imgVal"></span>
+            <span class="ftlwhf enc2imgVal"></span>
+        </div></td>
+        <td><div class="lrRadius">
+            <span class="ftlwhf imgnums"><span class="<%=BID.rat_0(item.all_yoy)%>"><%:=BID.Rommafy_img(item.all_yoy, '%')%></span></span>
+            <span class="ftlwhf imgnums"><span class="<%=BID.rat_0(item.all_qoq)%>"><%:=BID.Rommafy_img(item.all_qoq, '%')%></span></span>
+        </div></td>
+        <td><div class="lrRadius">
+            <span class="ftlwhf imgnums"><span class="<%=BID.rat_0(item.wise_yoy)%>"><%:=BID.Rommafy_img(item.wise_yoy, '%')%></span></span>
+            <span class="ftlwhf imgnums"><span class="<%=BID.rat_0(item.wise_qoq)%>"><%:=BID.Rommafy_img(item.wise_qoq, '%')%></span></span>
+        </div></td>
+    </tr>
+<%
+}
+%>
+</table>
+</script>
+    </div>
+</div>
+
+
+
+    
+
+
+
+
+<style id="innerStyle4BarAvg"></style>
+<style>
+.tipopWords{z-index:6;position:absolute;margin-top:-25px;}
+.tipopWords .contentWord{
+    padding:3px 5px;font-size:12px;
+    border:1px solid #4d4d4d;border-radius:4px;
+    background-color:#4d4d4d;color:#fff;
+}
+.tipopWords .showPoint{position:absolute;left:50%;bottom:0px;width:10px;margin-left:-5px;}
+.showPoint .arrBorder, .showPoint .arrContent{
+    position:absolute;width:0;height:0;overflow:hidden;
+    border:5px dashed transparent;border-bottom:none;
+}
+.showPoint .arrBorder{border-top:5px solid #4d4d4d;bottom:-5px;}
+.showPoint .arrContent{border-top:5px solid #4d4d4d;bottom:-4px;}
+</style>
+
+
+
+<div class="blkUnit grpUnit intrtUnit" id="trend-wrap">
+    <div class="titlBar" style="padding-bottom:16px;">
+        <h4>热点趋势</h4>
+        <i class="icons help" onclick="BID.showHelpTip('hptp_trend')"></i>
+        <div class="ttools">
+            <i class="icons shar" title="分享"></i>
+            <!-- i class="icons down" title="下载"></i -->
+        </div>
+    </div>
+    <div class="grpArea" style="width:100%;overflow:hidden;position:relative;z-index:0;">
+        <div style="position:absolute;top:0;z-index:2;width:100%;">
+            <div class="box-toolbar" style="right:17px;">
+                <a class="chartselect" rel="7" href="javascript:void(0)">最近7天</a>
+                <a class="chartselect" rel="30" href="javascript:void(0)">最近30天</a>
+                <a class="chartselect" rel="90" href="javascript:void(0)">最近90天</a>
+                <a class="chartselect" rel="180" href="javascript:void(0)">最近半年</a>
+                <a class="chartselect" rel="all" href="javascript:void(0)">全部</a>
+            </div>
+            <div id="trend-control" class="box-toolbar" style="top:105px">            
+                <label id="trend-topline"><span></span>新闻头条</label>
+                <label id="trend-meanline"><span></span>平均值</label>
+                <label id="trend-forecast"><span></span>预测</label>
+            </div>
+        </div>
+        <div id="trend_copyright" style="left:20px;top:325px;display:none;" class="R_copyright"></div>
+        <img id="trendYimg" style="position:absolute;left:912px;top:137px;display:none;" src="about:blank" />
+        <div id="trend" class="R_paper" style="margin-top:6px;height:480px;_background-color:#fff;"></div>   
+    </div>
+    <div id="trendBarVal" class="tipopWords barAvgVal" style="display:none;">
+        <div class="contentWord"></div>
+        <div class="showPoint">
+            <div class="arrBorder"></div>
+            <div class="arrContent"></div>
+        </div>
+    </div>
+    <div class="labels">
+ 	<strong>数据来源：</strong>百度指数 &copy;baidu<br />
+	<strong>作用说明：</strong>反映用户在互联网上对特定关键词的关注程度及持续变化情况<br />
+	<strong>算法说明：</strong>以网民在百度的搜索量为数据基础，以关键词为统计对象，科学分析并计算出各个关键词在百度网页搜索中搜索频次的加权和。根据数据来源的不同，搜索指数分为PC搜索指数和移动搜索指数。
+    </div>
+
+</div>
+
+
+
+ 
+
+
+
+
+            <div class="ftc"></div>
+        </div>
+        <div id="footer">
+
+    <p class="copyright">
+        &copy;2015&nbsp;Baidu&nbsp;
+        <a target="_blank" href="/Helper/?tpl=duty">使用百度指数前必读</a>
+        &nbsp;&nbsp;
+        <a target="_blank" href="/Helper/?tpl=copyright">百度指数版权声明</a>
+        &nbsp;京ICP证030173号&nbsp;
+
+    </p>
+</div>
+
+
+
+
+    </div>
+    <div id="lTools" class="lTools">
+        <div id="lTools_c">
+                            <form id="adv_pannel" class="" autocomplete="off">
+    <div class="tabUnit">
+        <div class="tabTitle">
+            <ul id="compTab" class="tabUl" onclick="BID.tabFun()">
+                <li class="tabLi"><i class="icons byWord"></i><span>按关键词</span></li>
+                <li class="tabLi"><i class="icons byArea"></i><span>按地域</span></li>
+            </ul>
+        </div>
+        <div class="tabConts" style="padding-top:8px;*z-index:1;">
+            <div class="tabCont dsn">
+                
+
+<input type="hidden" name="type" value="0" />
+<ul class="compUl hideDel" ctlName="word">
+    <li class="compLi comCtl"></li>
+    <li class="compLi comCtl dsn"></li>
+    <li class="compLi comCtl dsn"></li>
+    <li class="compLi comCtl dsn"></li>
+    <li class="compLi comCtl dsn"></li>
+</ul>
+
+<a href="javascript:;" class="addComp" onclick="BID.add_del_comp()"><i class="icons add"></i><span>添加关键词</span></a>
+
+<div class="compVsplit"></div>
+
+
+<a href="javascript:;" id="addFavBtn" class="dsn addFav" onclick="BID.addFavWords()"><i class="icons add"></i><span>关注</span></a>
+
+
+<div class="compOth" ctlName="time">
+    <div class="comCtl"></div>
+</div>
+<div class="compOth" ctlName="area">
+    <div class="comCtl"></div>
+</div>
+
+
+
+            </div>
+            <div class="tabCont dsn">
+                
+
+<input type="hidden" name="type" value="1" />
+<ul class="compUl hideDel" ctlName="area">
+    <li class="compLi comCtl"></li>
+    <li class="compLi comCtl dsn"></li>
+    <li class="compLi comCtl dsn"></li>
+    <li class="compLi comCtl dsn"></li>
+    <li class="compLi comCtl dsn"></li>
+</ul>
+
+<a href="javascript:;" class="addComp" onclick="BID.add_del_comp()"><i class="icons add"></i><span>添加对比地区</span></a>
+
+<div class="compVsplit"></div>
+
+<div class="compOth" ctlName="word">
+    <div class="comBorderL" style="float:none;margin:7px 0 9px 9px;">
+        <label for="compOth_comWord" style="position:absolute;padding:10px 6px;cursor:text;">关键词：</label>
+        <input name="word" id="compOth_comWord" class="comWord" style="width:145px;padding-left:50px;" maxlength="50" onmousedown="BID.createSug()" autocomplete="off" />
+    </div>
+</div>
+<div class="compOth" ctlName="time">
+    <div class="comCtl"></div>
+</div>
+
+
+
+            </div>
+        </div>
+        <a href="javascript:;" class="compOK" onclick="BID.advSearch()"><i class="icons ok"></i></a>
+    </div>
+</form>
+
+
+
+
+<form autocomplete="off" style="display:none;">
+    <div id="advTpls_word">
+        <div class="comBorderL">
+            <input name="word" class="comWord" maxlength="50" onmousedown="BID.createSug()" autocomplete="off" />
+        </div>
+        <div class="comBorderR">
+            <i class="icons delComp" onclick="BID.add_del_comp()"></i>
+        </div>
+    </div>
+    <div id="advTpls_area">
+        <div class="comBorderL" onclick="BID.holdReg()">
+        <span class="holdBox">
+            <span class="icontext">地区：</span>
+            <span class="holdText">全国</span>
+            <i class="icons hdArDn"></i>
+        </span>
+        <span class="regionA" style="width:186px;" onclick="BID.regionA()">
+            <input class="regionValue" name="area" value="0" onchange="BID.holdRegChg()" />
+            <span class="selectA provA">
+                <input class="sltVal" value="0" onchange="BID.regionA.change()" />
+                <span class="sltTxt">所有省份</span>
+                <div class="sltOpt"></div>
+            </span>
+            <span class="selectA cityA">
+                <input class="sltVal" value="0" onchange="BID.regionA.change()" />
+                <span class="sltTxt">所有城市</span>
+                <div class="sltOpt"></div>
+            </span>
+        </span>
+        </div>
+        <div class="comBorderR">
+            <i class="icons delComp" onclick="BID.add_del_comp()"></i>
+        </div>
+    </div>
+
+            <div id="advTpls_time">
+        <div class="comBorderL">
+        <span class="selectA rangeDate" limitB="20110101" onclick="BID.rangeDate()" style="background-image:none;">
+            <span class="icontext">时间：</span>
+            <input class="sltVal" name="time" type="hidden" value="" />
+            <span class="sltTxt"></span>
+            <i class="icons hdArDn"></i>
+            <div class="sltOpt">
+                                                                                                                                                            <a href="#12">最近7天</a>
+                                                                                                        <a href="#13">最近30天</a>
+                                                                                                                                                                                                                                                                                                        <div style="height:0;margin:2px 10px;border-top:1px dashed #d7d7d7;_overflow:hidden;"></div>                        <a href="#cust">自定义时间段</a>
+                                                </div>
+        </span>
+        </div>
+        <div class="comBorderR">
+            <i class="icons delComp" onclick="BID.add_del_comp()"></i>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+<div id="banner_trend"></div>
+
+
+
+                    </div>
+    </div>
+</div>
+
+<div id="rTools">
+    <div class="share" style="width:20px;height:59px;">
+        <div id="bdshare" class="bdshareBox bdshare_t bds_tools get-codes-bdshare" style="position:absolute;width:20px;height:59px;background-image:url(about:blank);" onclick="bdShare._setPopData(T(this).attr('data'));">
+            <a href="#" class="popup_more" data-cmd="more" style="display:block;width:20px;height:59px;background:none;"></a>
+        </div>
+        <a class="rTahref shareicon" target="_blank" href="javascript:void(0)"><i class="icons"></i><span>分享</span></a>
+    </div>
+    
+            <a id="setFavBtn" class="rTahref setFav" title="点击加入收藏" href="javascript:;" onclick="BID.addFavWords()"><i class="icons"></i><span>收藏</span></a>
+        <a class="rTahref contact" target="_blank" href="/Helper/?tpl=contact&word=%CC%EC%C6%F8"><i class="icons"></i><span>反馈</span></a>
+    <a class="rTahref toTop" style="display:none;" href="javascript:window.scrollTo(0, 0);"><i class="icons"></i><span>顶部</span></a>
+</div>
+
+<style>
+    .bdshare_popup_box{left:auto!important;right:10px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+                    
+    
+        <script type="text/javascript" src="/static/js/tangram.js"></script>
+<script type="text/javascript" src="/static/js/magic.js"></script>
+<script type="text/javascript" src="/static/js/raphael.js" charset="UTF-8"></script>
+
+
+
+
+
+
+                        
+    
+        <script type="text/javascript" src="/static/js/funs.js?141230"></script>
+<script type="text/javascript" src="/static/js/index_graphic.js?141230"></script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    BID.fnsDate.adjust = (PPval.ppt = 'd24mNlEgBVMYIxJtBAEEBT8lDCkHcz8ALnU0IWticzx9NCdtdWYjNTYFOzEgOBpHACc9OSM%2FHAYkcllIcmkfFAh1eiISWHcFDD0Ufw9eGFEkMj88QwlkLDU8VVE%2FMwExPA8zD2V%2FdmFXYXFxJQAWXRJzCncXFgBXdDVqOjwnLhF%2FQhsOCAJUeiMXZ3MRTnYNVkMjUWV%2FPV4zJBcfJyZ3cxYlCycuGTw7PnQwHhsAS0U%2FOlo1RB9yLi0HchYsBB41Xid2BgkgJ2RBEHpXDSA2VQ%3D%3D', PPval.status = '0' || '0', PPval.adjust);
+    if(PPval.status == '301'){BID.vVerify();}
+    </script>
+
+
+
+
+<script type="text/javascript">
+T(function () {
+            BID.res2(/\//);
+    
+    
+                BID.scroll_resize();
+
+                     XGuYizxb = 'fzLIKfHO90UZC6g2Hky2ByVi4ETKkUbFv3uZpjGx656ZueRqSk';
+ dUqzz = Raphael(-500, -500, 200, 200).path('M10,24R100,21 71,53 84,20 75,59 43,73 67,69 48,45 74,53 93,83').getPointAtLength(122).alpha.toFixed(3) + XGuYizxb;
+                    T('#pas_regLink').each(function () {
+    this.href = this.href.split('&')[0] + '&u=' + encodeURIComponent(location.href);
+});
+T('#userbar a.cas_logout').each(function () {
+    this.href = this.href.split('&')[0] + '&u=' + encodeURIComponent(PPval.hostUrl + PPval.routeUrl);
+});
+
+                    BID.placehold('#schword', {cssText: 'padding:4px 10px;font-size:16px;_padding-top:8px;'});
+BID.newSuggestion('schword', {onconfirm: function (e, o) {
+    var word = T.string(o.data).trim();
+    if(!word){return;}
+    T('#schfm').submit();
+}});
+
+                        BID.crAdvPannel();
+    BID.fillAdvPannel();
+
+                     iEzh = Raphael(-500, -500, 200, 200).path('M30,48R84,33 70,25 31,46 78,27 39,37 24,84 66,75').getPointAtLength(185).alpha.toFixed(3) + dUqzz;
+            
+    
+                         GxkRH = Raphael(-500, -500, 200, 200).path('M24,50R47,36 67,60 27,43 98,80 52,86 39,93 87,78 93,25').getPointAtLength(317).alpha.toFixed(3) + iEzh;
+                T(function () {
+            BID.tProfile.init('trendProfile');
+
+        });
+                    T(function () {
+            var snapshot = {
+    show_share: 0 + 1,
+    cur:        "all",
+    usertime1:  "",
+    usertime2:  "",
+    topline:    "",
+    meanline:   "",
+    forecast:   "",
+    isarea:     "false"
+};
+
+//参数验证
+snapshot.cur = {'pc': 'pc', 'wise': 'wise'}[snapshot.cur] || 'all';
+snapshot.topline = false;
+snapshot.meanline = false;
+snapshot.forecast = {'disable': 'disable', 'true': true}[snapshot.forecast] || false;
+if (snapshot.isarea === 'true' && BID.getParams().type == '1') {
+    snapshot.isarea = true;
+} else {
+    snapshot.isarea = false;
+}
+
+trendChartInit(snapshot);
+
+        });
+                         zBG = GxkRH.split('').reverse().join('');
+                T(function () {
+            BID.dataBanner('trend', '', function (data, items) {
+    if(!data || !data.length){return;}
+    BID.crCarousel(T('#banner_trend').show()[0], items);
+});
+
+        });
+                    T(function () {
+            BID.rTools_pos('rTools');
+
+        });
+                         eUe = zBG.slice(0, 2) + 'EXSTR' + zBG.slice(2);
+                T(function () {
+            BID.dataBanner('header', '', function (data, items) {
+    if(!data || !data.length){return;}
+    BID.crCarousel(T('#banner_header').show()[0], items);
+});
+
+        });
+    
+                        var NTRK = Raphael(-500, -500, 200, 200).path('M81,63R69,53,69,06,17,72,69,69,44,88').getPointAtLength(47).alpha.toFixed(3) + zBG;
+                     WCop = eUe + eUe.slice(0, 2);
+                    var pcwz = Raphael(-500, -500, 200, 200).path('M60,87R44,95,69,72,88,21').getPointAtLength(135).alpha.toFixed(3) + eUe;
+            
+            BID.res2(WCop);
+        BID.res2(GxkRH);
+    });
+</script>
+
+
+
+
+
+    <script type="text/javascript" src="//hm.baidu.com/h.js?d101ea4d2a5c67dab98251f0b5de24dc"></script>
+    
+            <style>
+            #bdshare a{padding-top:4px;padding-bottom:4px;}
+            #bdshare a.popup_more{background-position:0px 5px;width:45px;margin-right:0;}
+            #bdshare_pop ul li{margin-right:-2px;}
+            .bdshareBds{height:30px;}
+            .bdsPreview{text-align:center;}
+            .bdsPreview .prvImg{width:240px;}
+            .bdsPreview .infLabel{padding:20px 0 80px 0;}
+        </style>
+        <div style="display:none;">
+            <div id="bdsBlockImg">
+                <div class="bdshareBds">
+                    <div id="bdshare" class="bdshareBox bdshare_t bds_tools get-codes-bdshare" onclick="bdShare._setPopData(T(this).attr('data'));">
+                        <span style="float:left;padding-top:5px;padding-left:20px;">分享到：</span>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                        <a href="#" class="bds_tieba bdtb" title="分享到百度贴吧"></a>
+                        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                        <a href="#" class="popup_more" data-cmd="more">更多...</a>
+                    </div>
+                </div>
+                <div class="bdsPreview"></div>
+            </div>
+            <form id="bdsDownLoad" method="post" action="" target="bdsDLiframe"></form>
+            <iframe name="bdsDLiframe" id="bdsDLiframe"></iframe>
+        </div>
+        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=655757" ></script>
+        <script type="text/javascript" id="bdshell_js"></script>
+        <script type="text/javascript">
+            var bdShare = window.bdShare || {};
+            bdShare._baseConfig = {
+                "title": "分享百度指数",
+                "bdText": "我是数据科学家啦！在@百度指数，可以研究关键词搜索趋势、洞察网民兴趣和需求、监测舆情动向、定位受众特征；还可以从行业的角度，分析市场特点。让我们一起探索大数据之美吧～",
+                "searchPic": "",
+                "bdMini": "2"
+            };
+            bdShare._getConfig = function (opts) {
+                opts = opts || {};
+                for (var k in bdShare._baseConfig) {
+                    if (!opts[k]) {opts[k] = bdShare._baseConfig[k];}
+                }
+                return opts;
+            };
+            bdShare._getStrData = function (opts) {
+                return T.json.stringify(bdShare._getConfig(opts));
+            };
+            bdShare._setPopData = function (strData) {//更多分享弹出框 设置data属性
+                var pop = T('#bdshare_pop');
+                if (!pop.length) {
+                    pop = null;
+                    setTimeout(function () {bdShare._setPopData(strData);}, 50);
+                } else {
+                    pop.attr('data', strData);
+                }
+            };
+            var bds_config = bdShare._getConfig();
+            T('#rTools .bdshareBox').attr('data', bdShare._getStrData());
+            document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + (new Date / 36e5 | 0);
+        </script>
+    
+
+
+
+
+
+</body>
+</html>
