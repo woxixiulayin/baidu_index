@@ -19,7 +19,7 @@ def get_shot_screen(web_addr, shot_name="shot.png"):
     browser.implicitly_wait(1)
     browser.find_element_by_id("login_username").send_keys(my_username)
     browser.find_element_by_id("login_loginpass").send_keys(my_password)
-    time.sleep(2)
+    time.sleep(10)
     browser.find_element_by_name("submit").click()
     time.sleep(2)
     browser.get(web_addr)

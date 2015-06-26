@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding:utf-8
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
 from pylab import *
 
 image_name = "shot.png"
@@ -24,11 +24,17 @@ def crop_img(img):
     return chart_image, search_img
 
 
+def img2data(img):
+    return list(img.getdata())
+
+
 def gray_img(img):
     return img.convert('L')
 
+def enhance(img, value = 2.0):
+    return ImageEnhance.Contrast(img).enhance(value)
 
-def twovalue_img_data(img, threhold=125):
+def twovalue_img_data(img, threhold=180):
     dst = img
     pix_list = list(dst.getdata())
     for n in range(len(pix_list)):
@@ -37,46 +43,164 @@ def twovalue_img_data(img, threhold=125):
         else:
             pix_list[n] = 255
     dst.putdata(pix_list)
-    return dst, pix_list
+    return dst
 
+def onevalue_gray(gray_img, threhold = 253):
+    dst = gray_img
+    pix_list = img2data(gray_img)
+    for n in range(len(pix_list)):
+        if pix_list[n] == threhold:
+            pix_list[n] = 0
+        else:
+            pix_list[n] = 255
+    dst.putdata(pix_list)
+    return dst
+
+def onevalue_color(img):
+    blue_color = [(237, 255, 255) ,(233, 255, 255),(239, 255, 255)]
+    dst = img
+    # dst.show('enhance')
+    pix_list = img2data(img)
+    for n in range(len(pix_list)):
+        if pix_list[n][0] !=0 or pix_list[n][1] > 2 or pix_list[n][2] ==0 or \
+            pix_list[n][0] == pix_list[n][1] == pix_list[n][2]:
+            pix_list[n] = (255,255,255)
+    dst.putdata(pix_list)
+    # dst.show()
+    # day_2_x(dst,30,True)
+    gray = gray_img(dst)
+    # gray.show()
+    twovalue = twovalue_img_data(gray, 20)
+    # static_img_color(dst)
+    return twovalue
+    # for n in range(len(pix_list)):
+    #     if pix_list[n][0] < (pix_list[n][1]+pix_list[n][2])/2:
+    #         pix_list[n] = (0,0,0)
+    # dst.putdata(pix_list)
+    # static_img_color(dst)
+    # gray_img(dst).show()
+    # for n in range(len(pix_list)):
+    #     if sum(pix_list[n])<100:
+    #         pix_list[n] = (255,255,255)
+    # dst.putdata(pix_list)
+    return dst    
 
 def img_xy_rotate(img):
-    width, height = img.size
-    pix_list = list(img.getdata())
-    pix_xy_rotate_list = []
-    for x in width:
-        y_list = []
-        for y in height:
-            y_list
+    return img.transpose(Image.ROTATE_270)
+    # width, height = img.size
+    # pix_list = list(img.getdata())
+    # pix_xy_rotate_list = []
+    # pix_height_list = []
+    # for x in range(width):
+    #     y_list = []
+    #     for y in range(height):
+    #         y_list.append(pix_list[y * width + x])
+    #         pix_height_list.append(y_list[-1::-1])
+    #     pix_xy_rotate_list.append(pix_height_list)
+    # return img.transpose(Image.ROTATE_270), pix_xy_rotate_list
 
-def get_x_day_data(img, x_day):
-    dst, pix_list = twovalue_img_data(img, 150)
+
+def day_2_x(img, x_day, show_lines=False):
+    # dst = twovalue_img_data(img, 180)
+    dst =img
     (width, height) = dst.size
     gap = width * 1.0 / (x_day - 1)
     draw = ImageDraw.Draw(dst)
     day2x = []
-    days_data = []
     for n in range(0, x_day):
         if n < x_day - 1:
             x = int(gap * n)
         elif n == x_day:
             x = width - 1
         day2x.append(x)
-        draw.line([(x, 0), (x, height)], width=1)
-        day_data = []
-        for m in range(height):
-            # print x,m,dst.getpixel((x,m))
-            day_data.append(dst.getpixel((x, m)))
-        days_data.append(day_data)
+        if show_lines is True:
+            draw.line([(x, 0), (x, height)], width=1)
+    if show_lines is True:
+        dst.show()
+    return day2x
     # print days_data[1]
     # print day2x
-    # dst.show()
+
+
+def data_of_day(day2x, img_270):
+    # data_list = []
+    img_270_list = list(img_270.getdata())
+    print img_270_list
+
+
+def zhifang_img(gray_img):
+    pix_list = img2data(gray_img)
+    zhifang_list = []
+    for i in range(256):
+        zhifang_list.append(0)
+    for n in range(len(pix_list)):
+        zhifang_list[pix_list[n]] += 1
+    # print zhifang_list
+    plot(range(256), zhifang_list)
+    axis([240,256,0,zhifang_list[-1]])
+    show()
+
+def static_img_color(img):
+    pix_list = img2data(img)
+    color_dic = {}
+    list_color = []
+    for n in pix_list:
+        if list_color.count(n) == 0:
+            list_color.append(n)
+            color_dic[n] = 0
+        color_dic[n] += 1
+    print len(color_dic)
+    color_dic = sorted(color_dic.items(), key=lambda d:d[1], reverse=True)
+    for (c,m) in color_dic:
+        print 'color:',c,' number:',m
+
+    # return yuanzu
+def x_day_value(gray,x_day_list):
+    im = img_xy_rotate(gray)
+    # im.show()
+    xy_rotate_list = img2data(im)
+    x_days_list = []
+    for n in x_day_list:
+        print n
+        x_days_list.append(xy_rotate_list[n*search_height:(n+1)*search_height])
+    return x_days_list
+
 
 
 crop_img(my_image)
 search_fil = Image.open("search_filter_img.jpg")
-get_x_day_data(gray_img(search_fil), 30)
-gray = gray_img(search_fil)
+# search_enhance = ImageEnhance.Contrast(search_fil).enhance(2.0)
+v = onevalue_color(enhance(search_fil))
+days2x = day_2_x(v, 30)
+print x_day_value(v, days2x)[2]
+# search_enhance.show()
+# gray = gray_img(search_fil)
+# print img2data(search_fil)
+# static_img_color(enhance(search_fil))
+# v.show()
+# day_2_x(v, 30, True)
+# value_2 = twovalue_img_data(gray, 180)
+# value_2.show()
+# data_of_day(days2x, value_2)
+
+# zhifang_img(gray)
+# onevalue_gray(gray,239).show()
+# print days2x
+
+# gray.show()
+# im = gray
+# im = im.filter(ImageFilter.MedianFilter())
+# enhancer = ImageEnhance.Contrast(im)
+# im = enhancer.enhance(2)
+# im = im.convert('1')
+# im.show()
+
+#
+# value_2[0].show()
+# img_xy_rotate(value_2[0]).show()
+# for i in range(4):
+# print xy_list[18]
+
 # twovalue_img(gray,150)
 # print len(list(gray.getdata()))
 
