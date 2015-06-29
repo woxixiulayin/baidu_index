@@ -108,7 +108,9 @@ def day_2_x(img, x_day, show_lines=False):
     draw = ImageDraw.Draw(dst)
     day2x = []
     for n in range(0, x_day):
-        if n < x_day - 1:
+        if n == 0:
+            x = 1
+        elif n < x_day - 1:
             x = int(gap * n)
         elif n == x_day:
             x = width - 1
@@ -154,25 +156,31 @@ def static_img_color(img):
     for (c,m) in color_dic:
         print 'color:',c,' number:',m
 
-    # return yuanzu
-def x_day_value(gray,x_day_list):
+#get index number of x day's point
+def x_days_index(gray,x_day_list):
     im = img_xy_rotate(gray)
     # im.show()
     xy_rotate_list = img2data(im)
-    x_days_list = []
+    x_days_index = []
     for n in x_day_list:
-        print n
-        x_days_list.append(xy_rotate_list[n*search_height:(n+1)*search_height])
-    return x_days_list
+        x_day_data = xy_rotate_list[n*search_height:(n+1)*search_height]
+        point_count = 0
+        point_number = 0
+        for m in range(search_height):
+            if x_day_data[m] == 0:
+                point_count += m
+                point_number += 1
+        x_days_index.append(point_count * 1.0 / point_number)
+    return x_days_index
 
 
-
-crop_img(my_image)
-search_fil = Image.open("search_filter_img.jpg")
+if __name__ == '__main__':
+    crop_img(my_image)
+    search_fil = Image.open("search_filter_img.jpg")
 # search_enhance = ImageEnhance.Contrast(search_fil).enhance(2.0)
-v = onevalue_color(enhance(search_fil))
-days2x = day_2_x(v, 30)
-print x_day_value(v, days2x)[2]
+    v = onevalue_color(enhance(search_fil))
+    days2x = day_2_x(v, 30)
+    print x_days_index(v, days2x)
 # search_enhance.show()
 # gray = gray_img(search_fil)
 # print img2data(search_fil)
