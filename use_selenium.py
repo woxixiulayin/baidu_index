@@ -3,7 +3,7 @@
 
 import time
 from selenium import webdriver
-
+import os
 
 my_username = 'ganggegedahuB'
 my_password = 'liu7536308'
@@ -13,7 +13,9 @@ index_addr = 'http://index.baidu.com/?tpl=trend&word=%CC%EC%C6%F8'
 
 def get_shot_screen(web_addr, shot_name="shot.png"):
     global my_username, my_password
-    browser = webdriver.Firefox()
+    chromedriver = "/usr/local/Cellar/chromedriver"
+    os.environ["webdriver.chrome.driver"] = chromedriver
+    browser = webdriver.Chrome(chromedriver)
     browser.set_window_size(1600, 900)
     browser.get("http://wappass.baidu.com/")
     browser.implicitly_wait(1)
